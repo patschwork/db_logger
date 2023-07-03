@@ -1,12 +1,13 @@
 from sqlalchemy import Column, Integer, String, DateTime, Text
 from sqlalchemy.ext.declarative import declarative_base
 import datetime
+from os import environ
 
 base = declarative_base()
 
-
 class Log(base):
-    __tablename__ = "log"
+    table_name = environ.get("table_name", "log")
+    __tablename__ = table_name
     id = Column(Integer, primary_key=True, autoincrement=True)
     time = Column(DateTime, nullable=False, default=datetime.datetime.now)
     level_name = Column(String(10), nullable=True)
