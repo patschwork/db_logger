@@ -3,6 +3,7 @@ from os import environ
 
 environ['name'] = 'sqlite'
 environ['database'] = 'log_db'
+environ['table_name'] = 'log'
 
 from db_logger.handlers import DBHandler
 
