@@ -12,7 +12,7 @@ basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
 format = Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
 backup_logger = getLogger('backup_logger')
-file_handler = FileHandler('file.log')
+file_handler = FileHandler('log.txt')
 file_handler.setLevel(DEBUG)
 file_handler.setFormatter(format)
 backup_logger.addHandler(file_handler)
